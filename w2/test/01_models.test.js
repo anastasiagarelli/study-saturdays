@@ -45,7 +45,7 @@ describe('Models', function() {
         });
       });
 
-      xit('requires `firstName`', () => {
+      it('requires `firstName`', () => {
         student.firstName = null;
         return student.validate().then(
           () => {
@@ -55,7 +55,7 @@ describe('Models', function() {
         );
       });
 
-      xit('requires `lastName`', () => {
+      it('requires `lastName`', () => {
         student.lastName = null;
         return student.validate().then(
           () => {
@@ -65,7 +65,7 @@ describe('Models', function() {
         );
       });
 
-      xit('requires `email`', () => {
+      it('requires `email`', () => {
         student.email = null;
         return student.validate().then(
           () => {
@@ -75,7 +75,7 @@ describe('Models', function() {
         );
       });
 
-      xit('requires `email` to be in an email form', () => {
+      it('requires `email` to be in an email form', () => {
         student.email = 'hola world';
         return student.validate().then(
           () => {
@@ -102,7 +102,7 @@ describe('Models', function() {
         });
       });
 
-      xit('capitalizes the first letter of the first and last name before save to the DB', () => {
+      it('capitalizes the first letter of the first and last name before save to the DB', () => {
         return newStudent.save().then(savedStudent => {
           expect(savedStudent.firstName).to.equal('Charles');
           expect(savedStudent.lastName).to.equal('Xavier');
